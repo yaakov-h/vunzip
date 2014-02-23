@@ -7,12 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D7522F6318B0C986000552C8 /* allocation.c in Sources */ = {isa = PBXBuildFile; fileRef = D7522F6218B0C986000552C8 /* allocation.c */; };
+		D7522F6C18B0C9F5000552C8 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = D7522F6B18B0C9F5000552C8 /* main.c */; };
+		D7522F6E18B0C9F5000552C8 /* vzip.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7522F6D18B0C9F5000552C8 /* vzip.1 */; };
+		D7522F7318B0C9FF000552C8 /* allocation.c in Sources */ = {isa = PBXBuildFile; fileRef = D7522F6218B0C986000552C8 /* allocation.c */; };
+		D7522F7718B0CBE0000552C8 /* LzmaEnc.c in Sources */ = {isa = PBXBuildFile; fileRef = D7522F7518B0CBE0000552C8 /* LzmaEnc.c */; };
+		D7522F7818B0CBE8000552C8 /* LzmaDec.c in Sources */ = {isa = PBXBuildFile; fileRef = D7A4DF0D18AC8A0A00538C5E /* LzmaDec.c */; };
+		D7522F7B18B0CE73000552C8 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = D79481F718AB4A940003D479 /* main.c */; };
+		D7522F7C18B0CE81000552C8 /* crc32.c in Sources */ = {isa = PBXBuildFile; fileRef = D774014E18ACC9E1006500E1 /* crc32.c */; };
+		D7522F7E18B0CE8B000552C8 /* LzFind.c in Sources */ = {isa = PBXBuildFile; fileRef = D7522F7D18B0CE8B000552C8 /* LzFind.c */; };
 		D774015018ACC9E1006500E1 /* crc32.c in Sources */ = {isa = PBXBuildFile; fileRef = D774014E18ACC9E1006500E1 /* crc32.c */; };
-		D79481F818AB4A940003D479 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = D79481F718AB4A940003D479 /* main.c */; };
-		D7A4DF0F18AC8A0A00538C5E /* LzmaDec.c in Sources */ = {isa = PBXBuildFile; fileRef = D7A4DF0D18AC8A0A00538C5E /* LzmaDec.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		D7522F6718B0C9F5000552C8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				D7522F6E18B0C9F5000552C8 /* vzip.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		D79481F218AB4A940003D479 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -25,6 +42,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D7522F5F18B0C946000552C8 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		D7522F6118B0C966000552C8 /* vzipformat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vzipformat.h; sourceTree = "<group>"; };
+		D7522F6218B0C986000552C8 /* allocation.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = allocation.c; sourceTree = "<group>"; };
+		D7522F6418B0C9AD000552C8 /* allocation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = allocation.h; sourceTree = "<group>"; };
+		D7522F6918B0C9F5000552C8 /* vzip */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = vzip; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7522F6B18B0C9F5000552C8 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		D7522F6D18B0C9F5000552C8 /* vzip.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = vzip.1; sourceTree = "<group>"; };
+		D7522F7518B0CBE0000552C8 /* LzmaEnc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = LzmaEnc.c; sourceTree = "<group>"; };
+		D7522F7618B0CBE0000552C8 /* LzmaEnc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LzmaEnc.h; sourceTree = "<group>"; };
+		D7522F7918B0CE3B000552C8 /* LzFind.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LzFind.h; sourceTree = "<group>"; };
+		D7522F7D18B0CE8B000552C8 /* LzFind.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = LzFind.c; sourceTree = "<group>"; };
+		D7522F7F18B0CE96000552C8 /* LzHash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LzHash.h; sourceTree = "<group>"; };
 		D774014E18ACC9E1006500E1 /* crc32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = crc32.c; sourceTree = "<group>"; };
 		D774014F18ACC9E1006500E1 /* crc32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crc32.h; sourceTree = "<group>"; };
 		D79481F418AB4A940003D479 /* vunzip */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = vunzip; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,6 +64,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D7522F6618B0C9F5000552C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D79481F118AB4A940003D479 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -45,6 +81,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D7522F5E18B0C932000552C8 /* vzip */ = {
+			isa = PBXGroup;
+			children = (
+				D7522F5F18B0C946000552C8 /* main.c */,
+			);
+			path = vzip;
+			sourceTree = "<group>";
+		};
+		D7522F6A18B0C9F5000552C8 /* vzip */ = {
+			isa = PBXGroup;
+			children = (
+				D7522F6B18B0C9F5000552C8 /* main.c */,
+				D7522F6D18B0C9F5000552C8 /* vzip.1 */,
+			);
+			path = vzip;
+			sourceTree = "<group>";
+		};
 		D774014C18ACC991006500E1 /* crc */ = {
 			isa = PBXGroup;
 			children = (
@@ -57,9 +110,16 @@
 		D774014D18ACC994006500E1 /* lzma */ = {
 			isa = PBXGroup;
 			children = (
-				D7A4DF1018AC8A4000538C5E /* Types.h */,
+				D7522F7D18B0CE8B000552C8 /* LzFind.c */,
+				D7522F7918B0CE3B000552C8 /* LzFind.h */,
+				D7522F7F18B0CE96000552C8 /* LzHash.h */,
+				D7522F7518B0CBE0000552C8 /* LzmaEnc.c */,
+				D7522F7618B0CBE0000552C8 /* LzmaEnc.h */,
 				D7A4DF0D18AC8A0A00538C5E /* LzmaDec.c */,
 				D7A4DF0E18AC8A0A00538C5E /* LzmaDec.h */,
+				D7A4DF1018AC8A4000538C5E /* Types.h */,
+				D7522F6218B0C986000552C8 /* allocation.c */,
+				D7522F6418B0C9AD000552C8 /* allocation.h */,
 			);
 			path = lzma;
 			sourceTree = "<group>";
@@ -67,9 +127,12 @@
 		D79481EB18AB4A940003D479 = {
 			isa = PBXGroup;
 			children = (
+				D7522F6118B0C966000552C8 /* vzipformat.h */,
 				D774014D18ACC994006500E1 /* lzma */,
 				D774014C18ACC991006500E1 /* crc */,
+				D7522F5E18B0C932000552C8 /* vzip */,
 				D79481F618AB4A940003D479 /* vunzip */,
+				D7522F6A18B0C9F5000552C8 /* vzip */,
 				D79481F518AB4A940003D479 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				D79481F418AB4A940003D479 /* vunzip */,
+				D7522F6918B0C9F5000552C8 /* vzip */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -93,6 +157,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D7522F6818B0C9F5000552C8 /* vzip */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7522F6F18B0C9F5000552C8 /* Build configuration list for PBXNativeTarget "vzip" */;
+			buildPhases = (
+				D7522F6518B0C9F5000552C8 /* Sources */,
+				D7522F6618B0C9F5000552C8 /* Frameworks */,
+				D7522F6718B0C9F5000552C8 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = vzip;
+			productName = vzip;
+			productReference = D7522F6918B0C9F5000552C8 /* vzip */;
+			productType = "com.apple.product-type.tool";
+		};
 		D79481F318AB4A940003D479 /* vunzip */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D79481FD18AB4A940003D479 /* Build configuration list for PBXNativeTarget "vunzip" */;
@@ -132,24 +213,60 @@
 			projectRoot = "";
 			targets = (
 				D79481F318AB4A940003D479 /* vunzip */,
+				D7522F6818B0C9F5000552C8 /* vzip */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D7522F6518B0C9F5000552C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7522F7318B0C9FF000552C8 /* allocation.c in Sources */,
+				D7522F7E18B0CE8B000552C8 /* LzFind.c in Sources */,
+				D7522F7C18B0CE81000552C8 /* crc32.c in Sources */,
+				D7522F6C18B0C9F5000552C8 /* main.c in Sources */,
+				D7522F7718B0CBE0000552C8 /* LzmaEnc.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D79481F018AB4A940003D479 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7522F7B18B0CE73000552C8 /* main.c in Sources */,
 				D774015018ACC9E1006500E1 /* crc32.c in Sources */,
-				D7A4DF0F18AC8A0A00538C5E /* LzmaDec.c in Sources */,
-				D79481F818AB4A940003D479 /* main.c in Sources */,
+				D7522F6318B0C986000552C8 /* allocation.c in Sources */,
+				D7522F7818B0CBE8000552C8 /* LzmaDec.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		D7522F7018B0C9F5000552C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_CFLAGS = "-D_7ZIP_ST";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D7522F7118B0C9F5000552C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_CFLAGS = "-D_7ZIP_ST";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		D79481FB18AB4A940003D479 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -226,10 +343,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/yaakov/Development/Scratch/vzip,
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -242,10 +356,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/yaakov/Development/Scratch/vzip,
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -253,6 +364,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D7522F6F18B0C9F5000552C8 /* Build configuration list for PBXNativeTarget "vzip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7522F7018B0C9F5000552C8 /* Debug */,
+				D7522F7118B0C9F5000552C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		D79481EF18AB4A940003D479 /* Build configuration list for PBXProject "vunzip" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

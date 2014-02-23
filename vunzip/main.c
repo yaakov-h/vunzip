@@ -1,4 +1,5 @@
 #include <assert.h>
+#include <limits.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -6,29 +7,9 @@
 #include <time.h>
 
 #include "LzmaDec.h"
+#include "allocation.h"
 #include "crc32.h"
-
-#pragma pack( push )
-#pragma pack( 1 )
-struct VZHeader
-{
-	char V;
-	char Z;
-	char version;
-	uint32_t rtime_created;
-};
-
-struct VZFooter
-{
-	uint32_t crc;
-	uint32_t size;
-	char z;
-	char v;
-};
-#pragma pack( pop )
-
-void * SzAlloc( void * p, size_t size ) { return malloc(size); }
-void SzFree( void * p, void * address ) { return free(address); }
+#include "vzipformat.h"
 
 int main( int argc, const char * argv[] )
 {
@@ -55,9 +36,9 @@ int main( int argc, const char * argv[] )
 		return -1;
 	}
 	
-	// Assume the file path and name will be less than 1024 chars.
+	// Assume the file path and name will be less than PATH_MAX chars.
 	// If it's more, truncate indiscriminately.
-	static const size_t uFileNameBufLen = 1024;
+	static const size_t uFileNameBufLen = PATH_MAX;
 	char pszOutFileName[uFileNameBufLen];
 	memset( pszOutFileName, 0, uFileNameBufLen - 1 );
 	size_t uNameLen = vzLoc - pszInFileName;
@@ -116,68 +97,32 @@ int main( int argc, const char * argv[] )
 	char * pUncompressedData = (char *)malloc( footer.size );
 	memset( pUncompressedData, 0, footer.size );
 	
-	SizeT srcLen, available = ulDataSize - LZMA_PROPS_SIZE;
+	SizeT srcLen = ulDataSize - LZMA_PROPS_SIZE;
 	SizeT destLen = footer.size;
 	ISzAlloc allocator = { SzAlloc, SzFree };
 	
-	CLzmaDec state;
-	LzmaDec_Construct(&state);
-	SRes result = LzmaDec_Allocate( &state, (const Byte *)pCompressedData, LZMA_PROPS_SIZE, &allocator );
+	ELzmaStatus status;
+	SRes result = LzmaDecode((Byte *)pUncompressedData, &destLen, (const Byte*)pCompressedData + LZMA_PROPS_SIZE, &srcLen, (Byte *)pCompressedData, LZMA_PROPS_SIZE, 1, &status, &allocator);
 	
-	static const size_t uBufferSize = 1024;
-	
+		
 	if ( result != SZ_OK )
 	{
-		fprintf( stderr, "Invalid LZMA properties: %d\n", result );
+		fprintf( stderr, "Error while decompressing: SRes result %d\n", result );
 	}
 	else
 	{
-		char * pLzmaData = pCompressedData + LZMA_PROPS_SIZE;
-		char * pDecompressedData = pUncompressedData;
-		LzmaDec_Init( &state );
+		uint32_t uCalculatedChecksum = crc32( 0, pUncompressedData, footer.size );
 		
-		ELzmaStatus status;
-		
-		while ( true )
+		if ( uCalculatedChecksum != footer.crc )
 		{
-			
-			srcLen = available;
-			destLen = (SizeT)uBufferSize;
-			
-			result = LzmaDec_DecodeToBuf( &state, (Byte *)pDecompressedData, &destLen, (Byte *)pLzmaData, &srcLen, LZMA_FINISH_ANY, &status );
-			pLzmaData += srcLen;
-			available -= srcLen;
-			pDecompressedData += destLen;
-			
-			if ( result != SZ_OK || status == LZMA_STATUS_FINISHED_WITH_MARK || status == LZMA_STATUS_NEEDS_MORE_INPUT )
-			{
-				break;
-			}
-		}
-		
-		if ( status == LZMA_STATUS_NEEDS_MORE_INPUT )
-		{
-			fprintf( stderr, "Data error during decompression!\n" );
-		}
-		else if ( result != SZ_OK )
-		{
-			fprintf( stderr, "Error while decompressing: SRes result %d\n", result );
+			fprintf(stderr, "Checksum mismatch. The data may be corrupt.\n");
 		}
 		else
 		{
-			uint32_t uCalculatedChecksum = crc32( 0, pUncompressedData, footer.size );
-			
- 			if ( uCalculatedChecksum != footer.crc )
-			{
-				fprintf(stderr, "Checksum mismatch. The data may be corrupt.\n");
-			}
-			else
-			{
-				fwrite( pUncompressedData, 1, footer.size, pOutFile );
-			}
+			fwrite( pUncompressedData, 1, footer.size, pOutFile );
 		}
 	}
-	
+
 	fflush( pOutFile );
 	free( pCompressedData );
 	free( pUncompressedData );
