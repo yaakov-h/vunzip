@@ -102,7 +102,7 @@ int main( int argc, const char * argv[] )
 	ISzAlloc allocator = { SzAlloc, SzFree };
 	
 	ELzmaStatus status;
-	SRes result = LzmaDecode((Byte *)pUncompressedData, &destLen, (const Byte*)pCompressedData + LZMA_PROPS_SIZE, &srcLen, (Byte *)pCompressedData, LZMA_PROPS_SIZE, 1, &status, &allocator);
+	SRes result = LzmaDecode( (Byte *)pUncompressedData, &destLen, (const Byte*)pCompressedData + LZMA_PROPS_SIZE, &srcLen, (Byte *)pCompressedData, LZMA_PROPS_SIZE, 1, &status, &allocator );
 	
 		
 	if ( result != SZ_OK )
