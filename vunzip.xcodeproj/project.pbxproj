@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		D7522F6318B0C986000552C8 /* allocation.c in Sources */ = {isa = PBXBuildFile; fileRef = D7522F6218B0C986000552C8 /* allocation.c */; };
 		D7522F6C18B0C9F5000552C8 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = D7522F6B18B0C9F5000552C8 /* main.c */; };
-		D7522F6E18B0C9F5000552C8 /* vzip.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7522F6D18B0C9F5000552C8 /* vzip.1 */; };
 		D7522F7318B0C9FF000552C8 /* allocation.c in Sources */ = {isa = PBXBuildFile; fileRef = D7522F6218B0C986000552C8 /* allocation.c */; };
 		D7522F7718B0CBE0000552C8 /* LzmaEnc.c in Sources */ = {isa = PBXBuildFile; fileRef = D7522F7518B0CBE0000552C8 /* LzmaEnc.c */; };
 		D7522F7818B0CBE8000552C8 /* LzmaDec.c in Sources */ = {isa = PBXBuildFile; fileRef = D7A4DF0D18AC8A0A00538C5E /* LzmaDec.c */; };
@@ -26,7 +25,6 @@
 			dstPath = /usr/share/man/man1/;
 			dstSubfolderSpec = 0;
 			files = (
-				D7522F6E18B0C9F5000552C8 /* vzip.1 in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
@@ -42,13 +40,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D7522F5F18B0C946000552C8 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		D7522F6118B0C966000552C8 /* vzipformat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vzipformat.h; sourceTree = "<group>"; };
 		D7522F6218B0C986000552C8 /* allocation.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = allocation.c; sourceTree = "<group>"; };
 		D7522F6418B0C9AD000552C8 /* allocation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = allocation.h; sourceTree = "<group>"; };
 		D7522F6918B0C9F5000552C8 /* vzip */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = vzip; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7522F6B18B0C9F5000552C8 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
-		D7522F6D18B0C9F5000552C8 /* vzip.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = vzip.1; sourceTree = "<group>"; };
 		D7522F7518B0CBE0000552C8 /* LzmaEnc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = LzmaEnc.c; sourceTree = "<group>"; };
 		D7522F7618B0CBE0000552C8 /* LzmaEnc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LzmaEnc.h; sourceTree = "<group>"; };
 		D7522F7918B0CE3B000552C8 /* LzFind.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LzFind.h; sourceTree = "<group>"; };
@@ -81,19 +77,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D7522F5E18B0C932000552C8 /* vzip */ = {
-			isa = PBXGroup;
-			children = (
-				D7522F5F18B0C946000552C8 /* main.c */,
-			);
-			path = vzip;
-			sourceTree = "<group>";
-		};
 		D7522F6A18B0C9F5000552C8 /* vzip */ = {
 			isa = PBXGroup;
 			children = (
 				D7522F6B18B0C9F5000552C8 /* main.c */,
-				D7522F6D18B0C9F5000552C8 /* vzip.1 */,
 			);
 			path = vzip;
 			sourceTree = "<group>";
@@ -130,7 +117,6 @@
 				D7522F6118B0C966000552C8 /* vzipformat.h */,
 				D774014D18ACC994006500E1 /* lzma */,
 				D774014C18ACC991006500E1 /* crc */,
-				D7522F5E18B0C932000552C8 /* vzip */,
 				D79481F618AB4A940003D479 /* vunzip */,
 				D7522F6A18B0C9F5000552C8 /* vzip */,
 				D79481F518AB4A940003D479 /* Products */,
@@ -371,6 +357,7 @@
 				D7522F7118B0C9F5000552C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D79481EF18AB4A940003D479 /* Build configuration list for PBXProject "vunzip" */ = {
 			isa = XCConfigurationList;
