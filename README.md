@@ -6,7 +6,9 @@
 
 On **OS X**, use the supplied Xcode project.
 
-This code has not been tested on **Windows**, **Linux** or anything else, but I don't see why it shouldn't work there.
+On **Linux**, use the Makefile.
+
+This code has not been extensively tested on **Windows**, **Linux** or anything else, but I don't see why it shouldn't work there.
 
 # Credits
 
